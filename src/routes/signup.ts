@@ -18,13 +18,13 @@ const signup = async (req: IRequest, env: Env) => {
 		return error(400, 'Missing email or password');
 	}
 
-	const resp = await client.passwords.create(body);
+	try {
+		const resp = await client.passwords.create(body);
 
-	if (resp.status_code !== 200) {
+		return json(resp);
+	} catch (e) {
 		return error(401, 'Unauthorized');
 	}
-
-	return json(resp);
 };
 
 export default signup;

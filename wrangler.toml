@@ -1,7 +1,7 @@
-name = ""                               # todo
+name = "stytch-itty-test"         # todo
 main = "./src/index.ts"
-compatibility_date = "2022-10-10"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2023-11-08"
+# compatibility_flags = ["nodejs_compat"]
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.
@@ -50,3 +50,8 @@ compatibility_flags = ["nodejs_compat"]
 # [[migrations]]
 # tag = "v1"
 # new_classes = ["MyDurableObject"]
+[vars]
+STYTCH_ENV = "test"
+
+[placement]
+mode = "smart"

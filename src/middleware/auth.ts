@@ -14,13 +14,13 @@ export const withAuthenticatedUser = async (req: IRequest, env: Env) => {
 	const client = getClient(env);
 
 	// verify the token
-	const resp = await client.sessions.authenticate({
-		session_jwt: token,
-	});
+	try {
+		const resp = await client.sessions.authenticateJwtLocal({
+			session_jwt: token,
+		});
 
-	if (resp.status_code !== 200) {
+		req.session = resp;
+	} catch (e) {
 		return error(401, 'Unauthorized');
 	}
-
-	req.session = resp.session;
 };
