@@ -1,0 +1,1 @@
+export { withAuthenticatedUser } from './auth';
