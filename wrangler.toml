@@ -1,4 +1,4 @@
-name = "stytch-itty-test"         # todo
+name = "stytch-itty-router"       # todo
 main = "./src/index.ts"
 compatibility_date = "2023-11-08"
 # compatibility_flags = ["nodejs_compat"]
